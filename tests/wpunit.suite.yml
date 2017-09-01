@@ -1,0 +1,22 @@
+# Codeception Test Suite Configuration
+#
+# Suite for unit or integration tests that require WordPress functions and classes.
+
+actor: WpunitTester
+modules:
+    enabled:
+        - WPLoader
+        - \Helper\Wpunit
+    config:
+        WPLoader:
+            wpRootFolder: "/var/www/html/nettsteder/wp"
+            dbName: "wpTests"
+            dbHost: "localhost"
+            dbUser: "wpTestsUsr"
+            dbPassword: "secret"
+            tablePrefix: "wp_"
+            domain: "165.227.134.159"
+            adminEmail: "bjorn@dekode.no"
+            title: "Test"        
+            plugins: ['dss-wp-events/dss-wp-events.php']
+            activatePlugins: ['dss-wp-events/dss-wp-events.php']
